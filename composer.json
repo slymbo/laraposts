@@ -14,11 +14,22 @@
     "autoload": {
         "psr-4": {
             "Slymbo\\Laraposts\\": "src/"
+        },
+        "psr-0": {
+            "Slymbo\\Laraposts\\": "src/"
         }
+    },
+    "extra": {
+        "providers": [
+            "Slymbo\\Laraposts\\Providers\\LarapostsServiceProvider"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-        "Slymbo\\Laraposts\\": "tests/"
+            "Slymbo\\Laraposts\\": "tests/"
+        },
+        "psr-0": {
+            "Slymbo\\Laraposts\\": "tests/"
         }
     },
     "scripts": {
