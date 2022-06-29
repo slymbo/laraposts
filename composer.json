@@ -35,5 +35,15 @@
     "scripts": {
         "test": "../../../vendor/bin/phpunit"
     },
-    "minimum-stability": "dev"
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../packages/slymbo/laraposts",
+            "options": {
+                "symlink": false
+            }
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
