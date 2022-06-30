@@ -30,7 +30,7 @@
             "Slymbo\\Laraposts\\": "tests/"
         },
         "psr-0": {
-            "Slymbo\\Laraposts\\": "tests/"
+            "Slymbo\\Laraposts\\Tests\\": "tests/"
         }
     },
     "scripts": {
