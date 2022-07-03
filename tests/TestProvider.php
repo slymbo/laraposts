@@ -1,4 +1,11 @@
 <?php
+/**
+ *
+ * Test case of the provider
+ *
+ */
+declare(strict_types=1);
+
 
 namespace Slymbo\Laraposts\Tests;
 
