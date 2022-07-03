@@ -29,10 +29,7 @@ class LarapostsServiceProvider extends ServiceProvider
 
         //Register the command
         if ($this->app->runningInConsole()){
-            $this->app->booted(function (){
-                $schedule = $this->app->make(Schedule::class);
-                $schedule->command('laraposts:install')->everyMinute();
-            });
+            $this->commands(InstallLaraPosts::class);
         }
     }
 }
