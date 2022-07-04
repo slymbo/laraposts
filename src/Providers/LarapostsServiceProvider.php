@@ -2,7 +2,6 @@
 
 namespace Slymbo\Laraposts\Providers;
 
-use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
 use Slymbo\Laraposts\Commands\InstallLaraPosts;
 
@@ -31,5 +30,9 @@ class LarapostsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()){
             $this->commands(InstallLaraPosts::class);
         }
+
+        $this->publishes([
+            __DIR__.'/../Config/laraposts.php' => config_path('laraposts.php')
+        ], 'config');
     }
 }
