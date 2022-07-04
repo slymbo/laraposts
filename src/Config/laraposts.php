@@ -1,1 +1,5 @@
-test contents
+<?php
+
+return [
+
+];

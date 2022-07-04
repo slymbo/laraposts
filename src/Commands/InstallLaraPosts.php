@@ -11,7 +11,7 @@ class InstallLaraPosts extends Command
 
     protected $description = "Install laraposts package";
 
-    public function handle(){
+    public function handle() {
 
         $this->info("Installation Laraposts Package");
         $this->info("Publishing configuration...");
@@ -21,12 +21,12 @@ class InstallLaraPosts extends Command
             $this->publishConfiguration();
             $this->info("Publish Configuration");
         }
-        else{
+        else {
             if($this->shouldOverwriteConfig())
             {
                 $this->info("Overwriting configuration file..." );
                 $this->publishConfiguration($force=true);
-            }else{
+            } else {
                 $this->info("Existing configuration was not overwritten");
             }
         }
