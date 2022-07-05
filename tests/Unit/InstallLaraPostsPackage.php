@@ -30,7 +30,6 @@ class InstallLaraPostsPackage extends TestCase
     public function when_a_config_file_is_present_users_can_choose_to_not_overwrite_it()
     {
         // Given we have already have an existing config file
-        File::put(config_path('laraposts.php'), 'test contents');
         $this->assertTrue(File::exists(config_path('laraposts.php')));
 
         // When we run the install command
@@ -47,17 +46,23 @@ class InstallLaraPostsPackage extends TestCase
         $command->expectsOutput('Existing configuration was not overwritten');
 
         // Assert that the original contents of the config file remain
-        $this->assertEquals('test contents', file_get_contents(config_path('laraposts.php')));
+        $this->assertEquals(
+            file_get_contents(
+                config_path(
+                '../packages/slymbo/laraposts/src/Config/laraposts.php'
+                )
+            ),
+            file_get_contents(
+                config_path('laraposts.php')
+            )
+        );
 
-        // Clean up
-        //unlink(config_path('laraposts.php'));
     }
 
     /** @test */
     public function when_a_config_file_is_present_users_can_choose_to_do_overwrite_it()
     {
         // Given we have already have an existing config file
-        File::put(config_path('laraposts.php'), 'test contents');
         $this->assertTrue(File::exists(config_path('laraposts.php')));
 
         // When we run the install command
@@ -82,8 +87,6 @@ class InstallLaraPostsPackage extends TestCase
             file_get_contents(config_path('laraposts.php'))
         );
 
-        // Clean up
-        //unlink(config_path('laraposts.php'));
     }
 
 
