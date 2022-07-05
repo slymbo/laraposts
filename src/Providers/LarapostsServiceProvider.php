@@ -14,7 +14,7 @@ class LarapostsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../Config/laraposts.php', 'laraposts');
     }
 
     /**
@@ -30,7 +30,7 @@ class LarapostsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()){
             $this->commands(InstallLaraPosts::class);
         }
-
+        // Auto publishing config file
         $this->publishes([
             __DIR__.'/../Config/laraposts.php' => config_path('laraposts.php')
         ], 'config');
