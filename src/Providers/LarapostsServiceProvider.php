@@ -29,10 +29,19 @@ class LarapostsServiceProvider extends ServiceProvider
         //Register the command
         if ($this->app->runningInConsole()){
             $this->commands(InstallLaraPosts::class);
+
+            // Auto publishing config file
+            $this->publishes([
+                __DIR__.'/../Config/laraposts.php' => config_path('laraposts.php')
+            ], 'config');
+
+            // Export the migration
+            if (!class_exists('20220706100000createpoststable')) {
+                $this->publishes([
+                    __DIR__.'/../Database/Migrations/create_posts_table.php.stub'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . 'create_posts_table.php'
+                ], 'migrations');
+            }
         }
-        // Auto publishing config file
-        $this->publishes([
-            __DIR__.'/../Config/laraposts.php' => config_path('laraposts.php')
-        ], 'config');
     }
 }

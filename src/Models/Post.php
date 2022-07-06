@@ -12,4 +12,9 @@ class Post extends Model
 
     protected $guarded = [];
 
+    protected static function newFactory()
+    {
+        return \Slymbo\Laraposts\Database\Factories\PostFactory::new();
+    }
+
 }
