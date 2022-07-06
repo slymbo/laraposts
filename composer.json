@@ -14,7 +14,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Slymbo\\Laraposts\\": "src/"
+            "Slymbo\\Laraposts\\": "src/",
+            "Slymbo\\Laraposts\\Database\\Factories\\": "src/Database/Factories"
         },
         "psr-0": {
             "Slymbo\\Laraposts\\": "src/"
