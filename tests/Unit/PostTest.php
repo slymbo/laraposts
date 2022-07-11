@@ -16,7 +16,7 @@ class PostTest extends TestCase
      * @test
      */
     function post_has_title() {
-        dd('Test');
+
         $post = Post::factory()->create([
             'title' => 'Laravel Posts'
         ]);
