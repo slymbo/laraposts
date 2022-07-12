@@ -26,6 +26,8 @@ class LarapostsServiceProvider extends ServiceProvider
     {
         include __DIR__ . './../Routes/routes.php';
 
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+
         //Register the command
         if ($this->app->runningInConsole()){
             $this->commands(InstallLaraPosts::class);
