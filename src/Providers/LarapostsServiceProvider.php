@@ -41,7 +41,7 @@ class LarapostsServiceProvider extends ServiceProvider
             if (!class_exists('20220706100000createpoststable')) {
                 $this->publishes([
                     __DIR__.'/../Database/Migrations/create_posts_table.php.stub'
-                    => database_path('migrations/' . date('Y_m_d_His', time())) . 'create_posts_table.php'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_posts_table.php'
                 ], 'migrations');
             }
         }
