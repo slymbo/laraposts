@@ -18,9 +18,9 @@ class PostTest extends TestCase
     function post_has_title() {
 
         $post = Post::factory()->create([
-            'title' => 'Laravel Posts'
+            'content' => 'Laravel Posts'
         ]);
 
-        $this->assertEquals('Laravel Posts', $post->title);
+        $this->assertEquals('Laravel Posts', $post->content);
     }
 }

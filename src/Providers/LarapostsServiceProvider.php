@@ -26,7 +26,7 @@ class LarapostsServiceProvider extends ServiceProvider
     {
         include __DIR__ . './../Routes/routes.php';
 
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . './../Database/Migrations');
 
         //Register the command
         if ($this->app->runningInConsole()){
@@ -34,13 +34,13 @@ class LarapostsServiceProvider extends ServiceProvider
 
             // Auto publishing config file
             $this->publishes([
-                __DIR__.'/../Config/laraposts.php' => config_path('laraposts.php')
+                __DIR__.'./../Config/laraposts.php' => config_path('laraposts.php')
             ], 'config');
 
             // Export the migration
-            if (!class_exists('20220706100000createpoststable')) {
+            if (!class_exists('CreatePostsTable')) {
                 $this->publishes([
-                    __DIR__.'/../Database/Migrations/create_posts_table.php.stub'
+                    __DIR__.'./../Database/Migrations/create_posts_table.php.stub'
                     => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_posts_table.php'
                 ], 'migrations');
             }
