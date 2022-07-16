@@ -40,8 +40,14 @@ class LarapostsServiceProvider extends ServiceProvider
             // Export the migration
             if (!class_exists('CreatePostsTable')) {
                 $this->publishes([
-                    __DIR__.'./../Database/Migrations/create_posts_table.php.stub'
-                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_posts_table.php'
+                    __DIR__.'/../Database/Migrations/create_posts_table.php.stub'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_posts_table.php',
+                    __DIR__.'/../Database/Migrations/create_comments_table.php.stub'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_comments_table.php',
+                    __DIR__.'/../Database/Migrations/create_likes_table.php.stub'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_likes_table.php',
+                    __DIR__.'/../Database/Migrations/create_shares_table.php.stub'
+                    => database_path('migrations/' . date('Y_m_d_His', time())) . '_create_shares_table.php'
                 ], 'migrations');
             }
         }
