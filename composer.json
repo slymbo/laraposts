@@ -3,7 +3,7 @@
     "description": "Post package",
     "homepage": "https://github.com/slymbo/laraposts",
     "license": "MIT",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "authors": [
         {
             "name": "Slymbo"
@@ -35,17 +35,8 @@
         }
     },
     "scripts": {
-        "test": "./../../vendor/bin/phpunit"
+        "test": "/../vendor/bin/phpunit"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./../../../packages/slymbo/laraposts",
-            "options": {
-                "symlink": false
-            }
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
