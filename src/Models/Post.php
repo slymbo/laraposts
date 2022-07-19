@@ -12,6 +12,13 @@ class Post extends Model
     use HasFactory;
 
     /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -19,13 +26,13 @@ class Post extends Model
     protected $table = 'posts';
 
     /**
-     * The attributes that aren't mass assignable.
-     *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [];
 
-
+    /**
+     * @return PostFactory
+     */
     protected static function newFactory()
     {
         return PostFactory::new();
