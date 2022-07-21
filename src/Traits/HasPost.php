@@ -13,12 +13,12 @@ trait HasPost
 
     public function create($attributes = [])
     {
-        return;
+        return ;
     }
 
     public function update($id)
     {
-        return;
+        return ;
     }
 
     public function delete($id)
