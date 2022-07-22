@@ -18,6 +18,7 @@ trait HasPost
 
     public function update($id)
     {
+        $post = Post::find($id);
         return ;
     }
 
