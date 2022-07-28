@@ -1,2 +1,2 @@
-#Larapost package
+#Larapost 
 In development mode
