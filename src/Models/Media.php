@@ -23,14 +23,14 @@ class Media extends Model
      *
      * @var string
      */
-    protected $table = 'posts';
+    protected $table = 'medias';
 
     /**
      * @var array
      */
     protected $fillable = [
-        'title',
-        'content'
+        'url',
+        'post_id'
     ];
 
     /**
