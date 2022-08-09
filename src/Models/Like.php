@@ -28,7 +28,11 @@ class Like extends Model
     /**
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'like',
+        'user_id',
+        'post_id'
+    ];
 
     /**
      * @return PostFactory

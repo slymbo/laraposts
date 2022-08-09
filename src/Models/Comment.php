@@ -28,7 +28,11 @@ class Comment extends Model
     /**
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'content',
+        'user_id',
+        'post_id'
+    ];
 
     /**
      * @return PostFactory
