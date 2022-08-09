@@ -28,7 +28,10 @@ class Share extends Model
     /**
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'post_id',
+        'user_id'
+    ];
 
     /**
      * @return PostFactory
